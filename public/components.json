@@ -1,0 +1,463 @@
+{
+    "components": [
+      {
+        "id": "1",
+        "category": "processor",
+        "name": "Intel Core i9-9900K",
+        "brand": "Intel",
+        "price": 499.99,
+        "stock": 10,
+        "imageUrl": "https://example.com/processor.jpg",
+        "description": "The Intel Core i9-9900K is a high-performance processor with 8 cores and 16 threads, ideal for gaming and demanding tasks."
+      },
+      {
+        "id": "2",
+        "category": "processor",
+        "name": "AMD Ryzen 9 5900X",
+        "brand": "AMD",
+        "price": 549.99,
+        "stock": 8,
+        "imageUrl": "https://example.com/processor2.jpg",
+        "description": "The AMD Ryzen 9 5900X is a powerhouse processor with 12 cores and 24 threads, offering exceptional performance for content creation and multitasking."
+      },
+      {
+        "id": "3",
+        "category": "processor",
+        "name": "Intel Core i7-10700K",
+        "brand": "Intel",
+        "price": 389.99,
+        "stock": 12,
+        "imageUrl": "https://example.com/processor3.jpg",
+        "description": "The Intel Core i7-10700K is a high-frequency processor with 8 cores and 16 threads, delivering excellent gaming and productivity performance."
+      },
+      {
+        "id": "4",
+        "category": "processor",
+        "name": "AMD Ryzen 7 5800X",
+        "brand": "AMD",
+        "price": 449.99,
+        "stock": 9,
+        "imageUrl": "https://example.com/processor4.jpg",
+        "description": "The AMD Ryzen 7 5800X is a mid-range processor with 8 cores and 16 threads, offering great value for gaming and multitasking."
+      },
+      {
+        "id": "5",
+        "category": "processor",
+        "name": "Intel Core i5-10600K",
+        "brand": "Intel",
+        "price": 269.99,
+        "stock": 15,
+        "imageUrl": "https://example.com/processor5.jpg",
+        "description": "The Intel Core i5-10600K is a budget-friendly processor with 6 cores and 12 threads, suitable for gaming and everyday computing tasks."
+      },
+      {
+        "id": "6",
+        "category": "motherboard",
+        "name": "ASUS ROG Strix Z490-E Gaming",
+        "brand": "ASUS",
+        "price": 299.99,
+        "stock": 5,
+        "imageUrl": "https://example.com/motherboard.jpg",
+        "description": "The ASUS ROG Strix Z490-E Gaming motherboard features an LGA 1200 socket and supports Intel's 10th generation processors, offering high-end gaming performance and RGB lighting."
+      },
+      {
+        "id": "7",
+        "category": "motherboard",
+        "name": "GIGABYTE B550 AORUS PRO AC",
+        "brand": "GIGABYTE",
+        "price": 189.99,
+        "stock": 7,
+        "imageUrl": "https://example.com/motherboard2.jpg",
+        "description": "The GIGABYTE B550 AORUS PRO AC motherboard supports AMD's Ryzen processors and features PCIe 4.0 support, offering excellent connectivity and performance for gaming enthusiasts."
+      },
+      {
+        "id": "8",
+        "category": "motherboard",
+        "name": "MSI MPG Z390 GAMING PRO CARBON AC",
+        "brand": "MSI",
+        "price": 209.99,
+        "stock": 6,
+        "imageUrl": "https://example.com/motherboard3.jpg",
+        "description": "The MSI MPG Z390 GAMING PRO CARBON AC motherboard supports Intel's 8th and 9th generation processors and features Mystic Light RGB lighting, offering a stylish and high-performance gaming platform."
+      },
+      {
+        "id": "9",
+        "category": "motherboard",
+        "name": "ASRock B450M PRO4",
+        "brand": "ASRock",
+        "price": 79.99,
+        "stock": 10,
+        "imageUrl": "https://example.com/motherboard4.jpg",
+        "description": "The ASRock B450M PRO4 motherboard is a micro ATX board supporting AMD's Ryzen processors, offering solid performance and reliability for budget-conscious gamers."
+      },
+      {
+        "id": "10",
+        "category": "motherboard",
+        "name": "ASUS TUF Gaming B550-PLUS",
+        "brand": "ASUS",
+        "price": 149.99,
+        "stock": 8,
+        "imageUrl": "https://example.com/motherboard5.jpg",
+        "description": "The ASUS TUF Gaming B550-PLUS motherboard offers military-grade durability and supports AMD's Ryzen processors, providing a reliable and feature-rich platform for gaming enthusiasts."
+      },
+      {
+        "id": "11",
+        "category": "ram",
+        "name": "Corsair Vengeance RGB Pro 16GB (2 x 8GB) DDR4-3200",
+        "brand": "Corsair",
+        "price": 89.99,
+        "stock": 15,
+        "imageUrl": "https://example.com/ram.jpg",
+        "description": "The Corsair Vengeance RGB Pro ram kit features vibrant RGB lighting and high-performance DDR4 memory, ideal for gaming rigs and enthusiast systems."
+      },
+      {
+        "id": "12",
+        "category": "ram",
+        "name": "G.SKILL Ripjaws V Series 32GB (2 x 16GB) DDR4-3600",
+        "brand": "G.SKILL",
+        "price": 169.99,
+        "stock": 10,
+        "imageUrl": "https://example.com/ram2.jpg",
+        "description": "The G.SKILL Ripjaws V Series ram kit offers high-speed DDR4 memory with low latency, perfect for content creation and heavy multitasking."
+      },
+      {
+        "id": "13",
+        "category": "ram",
+        "name": "Crucial Ballistix 32GB (2 x 16GB) DDR4-3200",
+        "brand": "Crucial",
+        "price": 149.99,
+        "stock": 12,
+        "imageUrl": "https://example.com/ram3.jpg",
+        "description": "The Crucial Ballistix ram kit delivers reliable performance and is optimized for compatibility with the latest AMD and Intel platforms, ideal for gaming and productivity tasks."
+      },
+      {
+        "id": "14",
+        "category": "ram",
+        "name": "Kingston HyperX Fury 16GB (2 x 8GB) DDR4-2666",
+        "brand": "Kingston",
+        "price": 79.99,
+        "stock": 20,
+        "imageUrl": "https://example.com/ram4.jpg",
+        "description": "The Kingston HyperX Fury ram kit offers plug-and-play functionality and stylish design with customizable RGB lighting, suitable for entry-level gaming setups."
+      },
+      {
+        "id": "15",
+        "category": "ram",
+        "name": "Team T-FORCE VULCAN Z 16GB (2 x 8GB) DDR4-3000",
+        "brand": "Team",
+        "price": 69.99,
+        "stock": 18,
+        "imageUrl": "https://example.com/ram5.jpg",
+        "description": "The Team T-FORCE VULCAN Z ram kit provides reliable performance and great value, featuring a minimalist design and high-quality DDR4 memory chips."
+      },
+      {
+        "id": "16",
+        "category": "ssd",
+        "name": "Samsung 970 EVO Plus 1TB NVMe ssd",
+        "brand": "Samsung",
+        "price": 179.99,
+        "stock": 10,
+        "imageUrl": "https://example.com/ssd.jpg",
+        "description": "The Samsung 970 EVO Plus ssd offers blazing-fast NVMe performance and large capacity, perfect for high-performance gaming and content creation."
+      },
+      {
+        "id": "17",
+        "category": "ssd",
+        "name": "Crucial MX500 1TB SATA ssd",
+        "brand": "Crucial",
+        "price": 109.99,
+        "stock": 15,
+        "imageUrl": "https://example.com/ssd2.jpg",
+        "description": "The Crucial MX500 ssd delivers reliable SATA performance and high capacity, ideal for upgrading laptops and desktops for faster boot times and application loading."
+      },
+      {
+        "id": "18",
+        "category": "ssd",
+        "name": "WD Blue SN550 500GB NVMe ssd",
+        "brand": "Western Digital",
+        "price": 64.99,
+        "stock": 20,
+        "imageUrl": "https://example.com/ssd3.jpg",
+        "description": "The WD Blue SN550 ssd offers NVMe speed and reliability at an affordable price, providing a fast and responsive storage solution for gaming and productivity."
+      },
+      {
+        "id": "19",
+        "category": "ssd",
+        "name": "ADATA SU800 1TB SATA ssd",
+        "brand": "ADATA",
+        "price": 89.99,
+        "stock": 12,
+        "imageUrl": "https://example.com/ssd4.jpg",
+        "description": "The ADATA SU800 ssd features 3D NAND flash and SLC caching, delivering excellent performance and durability for gaming and multimedia applications."
+      },
+      {
+        "id": "20",
+        "category": "ssd",
+        "name": "Seagate BarraCuda 500GB SATA ssd",
+        "brand": "Seagate",
+        "price": 54.99,
+        "stock": 18,
+        "imageUrl": "https://example.com/ssd5.jpg",
+        "description": "The Seagate BarraCuda ssd offers fast SATA performance and high capacity, providing ample storage for games, movies, and other multimedia content."
+      },
+      {
+        "id": "21",
+        "category": "psu",
+        "name": "EVGA SuperNOVA 850 G5 850W 80+ Gold psu",
+        "brand": "EVGA",
+        "price": 129.99,
+        "stock": 8,
+        "imageUrl": "https://example.com/power-supply.jpg",
+        "description": "The EVGA SuperNOVA 850 G5 psu delivers reliable and efficient power delivery with 80+ Gold certification, featuring modular cables and quiet operation for gaming and workstation builds."
+      },
+      {
+        "id": "22",
+        "category": "psu",
+        "name": "Corsair RM750x 750W 80+ Gold psu",
+        "brand": "Corsair",
+        "price": 119.99,
+        "stock": 10,
+        "imageUrl": "https://example.com/power-supply2.jpg",
+        "description": "The Corsair RM750x psu offers high efficiency and low noise operation with 80+ Gold certification, featuring fully modular cables and premium components for reliable performance."
+      },
+      {
+        "id": "23",
+        "category": "psu",
+        "name": "Seasonic FOCUS GX-650 650W 80+ Gold psu",
+        "brand": "Seasonic",
+        "price": 99.99,
+        "stock": 12,
+        "imageUrl": "https://example.com/power-supply3.jpg",
+        "description": "The Seasonic FOCUS GX-650 psu delivers stable power and high efficiency with 80+ Gold certification, featuring a quiet fan and hybrid fan control for optimal cooling."
+      },
+      {
+        "id": "24",
+        "category": "psu",
+        "name": "Thermaltake Toughpower Grand RGB 750W 80+ Gold psu",
+        "brand": "Thermaltake",
+        "price": 139.99,
+        "stock": 7,
+        "imageUrl": "https://example.com/power-supply4.jpg",
+        "description": "The Thermaltake Toughpower Grand RGB psu offers customizable RGB lighting and reliable power delivery with 80+ Gold certification, featuring a quiet fan and high-quality components for long-term reliability."
+      },
+      {
+        "id": "25",
+        "category": "psu",
+        "name": "NZXT C Series C750 750W 80+ Gold psu",
+        "brand": "NZXT",
+        "price": 109.99,
+        "stock": 9,
+        "imageUrl": "https://example.com/power-supply5.jpg",
+        "description": "The NZXT C Series C750 psu combines sleek design with reliable power delivery and 80+ Gold certification, featuring modular cables and silent operation for enthusiast builds."
+      },
+      {
+        "id": "26",
+        "category": "case",
+        "name": "NZXT H510 ATX Mid Tower case",
+        "brand": "NZXT",
+        "price": 69.99,
+        "stock": 15,
+        "imageUrl": "https://example.com/case.jpg",
+        "description": "The NZXT H510 Mid Tower case features a modern design with tempered glass side panel and intuitive cable management, offering a clean and stylish build for gaming and workstation setups."
+      },
+      {
+        "id": "27",
+        "category": "case",
+        "name": "Fractal Design Meshify C ATX Mid Tower case",
+        "brand": "Fractal Design",
+        "price": 89.99,
+        "stock": 10,
+        "imageUrl": "https://example.com/case2.jpg",
+        "description": "The Fractal Design Meshify C case offers high airflow performance and minimalist design, featuring a mesh front panel and spacious interior for efficient cooling and cable management."
+      },
+      {
+        "id": "28",
+        "category": "case",
+        "name": "Corsair iCUE 4000X RGB ATX Mid Tower case",
+        "brand": "Corsair",
+        "price": 119.99,
+        "stock": 8,
+        "imageUrl": "https://example.com/case3.jpg",
+        "description": "The Corsair iCUE 4000X RGB case features customizable RGB lighting and tempered glass panels, offering a stunning showcase for high-end gaming builds with ample airflow and cable management."
+      },
+      {
+        "id": "29",
+        "category": "case",
+        "name": "Cooler Master MasterBox MB311L ARGB MicroATX Mid Tower case",
+        "brand": "Cooler Master",
+        "price": 59.99,
+        "stock": 12,
+        "imageUrl": "https://example.com/case4.jpg",
+        "description": "The Cooler Master MasterBox MB311L case offers compact MicroATX form factor with ARGB lighting, featuring a mesh front panel and magnetic side panels for easy access and airflow."
+      },
+      {
+        "id": "30",
+        "category": "case",
+        "name": "Phanteks Eclipse P400A Digital ATX Mid Tower case",
+        "brand": "Phanteks",
+        "price": 99.99,
+        "stock": 9,
+        "imageUrl": "https://example.com/case5.jpg",
+        "description": "The Phanteks Eclipse P400A Digital case features a spacious interior and high airflow design, with integrated RGB lighting and tempered glass panels for a premium gaming aesthetic."
+      },
+      {
+        "id": "31",
+        "category": "hdd",
+        "name": "Seagate Barracuda 2TB hdd",
+        "brand": "Seagate",
+        "price": 59.99,
+        "stock": 20,
+        "imageUrl": "https://example.com/hdd.jpg",
+        "description": "The Seagate Barracuda hdd offers ample storage capacity and reliable performance for storing large files, games, and multimedia content."
+      },
+      {
+        "id": "32",
+        "category": "hdd",
+        "name": "Western Digital Blue 4TB hdd",
+        "brand": "Western Digital",
+        "price": 99.99,
+        "stock": 15,
+        "imageUrl": "https://example.com/hdd2.jpg",
+        "description": "The Western Digital Blue hdd provides high-capacity storage and fast data transfer speeds, ideal for storing movies, music, and photos."
+      },
+      {
+        "id": "33",
+        "category": "hdd",
+        "name": "Toshiba P300 3TB hdd",
+        "brand": "Toshiba",
+        "price": 79.99,
+        "stock": 18,
+        "imageUrl": "https://example.com/hdd3.jpg",
+        "description": "The Toshiba P300 hdd offers reliable performance and large capacity storage, suitable for desktop PCs, gaming consoles, and external enclosures."
+      },
+      {
+        "id": "34",
+        "category": "hdd",
+        "name": "Seagate IronWolf 6TB NAS hdd",
+        "brand": "Seagate",
+        "price": 149.99,
+        "stock": 12,
+        "imageUrl": "https://example.com/hdd4.jpg",
+        "description": "The Seagate IronWolf NAS hdd is designed for network attached storage systems, offering high reliability and performance for home and small business use."
+      },
+      {
+        "id": "35",
+        "category": "hdd",
+        "name": "WD Red 8TB NAS hdd",
+        "brand": "Western Digital",
+        "price": 199.99,
+        "stock": 8,
+        "imageUrl": "https://example.com/hdd5.jpg",
+        "description": "The WD Red NAS hdd is optimized for NAS systems and offers large capacity storage and enhanced reliability, ideal for multi-bay enclosures and RAID configurations."
+      },
+      {
+        "id": "36",
+        "category": "keyboard",
+        "name": "Razer BlackWidow Elite Mechanical Gaming keyboard",
+        "brand": "Razer",
+        "price": 129.99,
+        "stock": 10,
+        "imageUrl": "https://example.com/keyboard.jpg",
+        "description": "The Razer BlackWidow Elite features Razer Mechanical Switches and customizable RGB lighting, offering superior gaming performance and comfort for extended gaming sessions."
+      },
+      {
+        "id": "37",
+        "category": "keyboard",
+        "name": "Corsair K95 RGB PLATINUM XT Mechanical Gaming keyboard",
+        "brand": "Corsair",
+        "price": 179.99,
+        "stock": 8,
+        "imageUrl": "https://example.com/keyboard2.jpg",
+        "description": "The Corsair K95 RGB PLATINUM XT keyboard features Cherry MX RGB mechanical switches and dedicated macro keys, providing advanced customization options and responsive gaming performance."
+      },
+      {
+        "id": "38",
+        "category": "keyboard",
+        "name": "Logitech G Pro X Mechanical Gaming keyboard",
+        "brand": "Logitech",
+        "price": 149.99,
+        "stock": 12,
+        "imageUrl": "https://example.com/keyboard3.jpg",
+        "description": "The Logitech G Pro X keyboard features hot-swappable switches and customizable RGB lighting, offering professional-grade performance and versatility for competitive gaming."
+      },
+      {
+        "id": "39",
+        "category": "keyboard",
+        "name": "SteelSeries Apex Pro TKL Mechanical Gaming keyboard",
+        "brand": "SteelSeries",
+        "price": 179.99,
+        "stock": 9,
+        "imageUrl": "https://example.com/keyboard4.jpg",
+        "description": "The SteelSeries Apex Pro TKL keyboard features adjustable mechanical switches and customizable OLED Smart Display, offering unparalleled control and customization for gamers and streamers."
+      },
+      {
+        "id": "40",
+        "category": "keyboard",
+        "name": "HyperX Alloy Elite 2 Mechanical Gaming keyboard",
+        "brand": "HyperX",
+        "price": 129.99,
+        "stock": 15,
+        "imageUrl": "https://example.com/keyboard5.jpg",
+        "description": "The HyperX Alloy Elite 2 keyboard features HyperX Red mechanical switches and customizable RGB lighting, offering durability and style for gaming enthusiasts."
+      },
+      {
+        "id": "41",
+        "category": "mouse",
+        "name": "Logitech G502 HERO High Performance Gaming mouse",
+        "brand": "Logitech",
+        "price": 79.99,
+        "stock": 20,
+        "imageUrl": "https://example.com/mouse.jpg",
+        "description": "The Logitech G502 HERO gaming mouse features HERO sensor and customizable weights, offering precise tracking and ergonomic design for competitive gaming."
+      },
+      {
+        "id": "42",
+        "category": "mouse",
+        "name": "Razer DeathAdder V2 Gaming mouse",
+        "brand": "Razer",
+        "price": 69.99,
+        "stock": 18,
+        "imageUrl": "https://example.com/mouse2.jpg",
+        "description": "The Razer DeathAdder V2 gaming mouse features Razer Optical mouse Switches and Focus+ 20K DPI Optical Sensor, delivering superior speed and accuracy for gaming."
+      },
+      {
+        "id": "43",
+        "category": "mouse",
+        "name": "SteelSeries Rival 600 Gaming mouse",
+        "brand": "SteelSeries",
+        "price": 79.99,
+        "stock": 15,
+        "imageUrl": "https://example.com/mouse3.jpg",
+        "description": "The SteelSeries Rival 600 gaming mouse features TrueMove3+ Dual Optical Sensor System and customizable weight tuning, providing true 1-to-1 tracking and personalized comfort."
+      },
+      {
+        "id": "44",
+        "category": "mouse",
+        "name": "Corsair DARK CORE RGB PRO SE Wireless Gaming mouse",
+        "brand": "Corsair",
+        "price": 89.99,
+        "stock": 12,
+        "imageUrl": "https://example.com/mouse4.jpg",
+        "description": "The Corsair DARK CORE RGB PRO SE mouse features custom PixArt PMW3392 sensor and Qi wireless charging, offering high-performance wireless gaming with customizable RGB lighting."
+      },
+      {
+        "id": "45",
+        "category": "mouse",
+        "name": "HyperX Pulsefire Surge RGB Gaming mouse",
+        "brand": "HyperX",
+        "price": 59.99,
+        "stock": 10,
+        "imageUrl": "https://example.com/mouse5.jpg",
+        "description": "The HyperX Pulsefire Surge RGB gaming mouse features Pixart 3389 sensor and customizable RGB lighting with HyperX NGenuity software, offering precise tracking and stylish aesthetics."
+      },
+      {
+        "id": "b1aa",
+        "category": "keyboard",
+        "name": "Faruqe Hossain",
+        "brand": "e",
+        "price": "2",
+        "stock": "2",
+        "description": "e"
+      }
+    ]
+  }

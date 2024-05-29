@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.container{
+    max-width: 1980px;
+    width: 90%;
+    padding: 0 25px;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
+.button{
+    display: block;
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 16px;
+    margin: 10px auto;
+    width: 100%;
+}
+
+img{
+    max-width: 100%;
+}
+
+.navbar-center a:focus{
+    color: white;
+}
