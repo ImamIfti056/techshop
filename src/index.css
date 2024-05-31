@@ -8,7 +8,7 @@
     width: 90%;
     padding: 0 25px;
     margin: 0 auto;
-    border: 1px solid red;
+    border: 1px solid #ccc;
 }
 
 .button{
@@ -26,4 +26,21 @@ img{
 
 .navbar-center a:focus{
     color: white;
+}
+
+/* ---------------------components tab ----------------------------------- */
+.react-tabs__tab-list{
+    margin: 0 0 30px !important;
+
+}
+.react-tabs__tab-list .react-tabs__tab{
+    padding: 6px 16px;
+}
+
+.react-tabs__tab--selected{
+    font-weight: bold;
+}
+
+.react-tabs__tab-panel{
+    margin: 40px 0;
 }

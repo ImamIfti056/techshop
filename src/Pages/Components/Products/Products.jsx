@@ -2,27 +2,57 @@ import React from 'react'
 import { useComponenets } from '../../../hooks/useComponents'
 import ComponentCard from '../../Shared/ComponentCard/ComponentCard'
 import Title from '../../Shared/Title'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import ProductsTab from '../ProductsTab/ProductsTab';
 
 const Products = () => {
     const [components] = useComponenets()
-  return (
-    <div className='pt-24'>
-        <Title heading={'All Products'} subheading={'build your pc'}></Title>
-        Products Loaded: {components.length}
-        <div className='md:grid grid-cols-4 gap-4 justify-items-center'>
-                {
-                    components.map(comp => (
-                        <ComponentCard
-                            key={comp.id}
-                            name={comp.name}
-                            price={comp.price}
-                            category={comp.category}
-                        />
-                    ))
-                }
+
+    const processor = components.filter(comp => comp.category === "processor")
+    const motherboard = components.filter(comp => comp.category === "motherboard")
+    const ram = components.filter(comp => comp.category === "ram")
+    const ssd = components.filter(comp => comp.category === "ssd")
+    const casing = components.filter(comp => comp.category === "case")
+    const psu = components.filter(comp => comp.category === "psu")
+
+    return (
+        <div className='pt-24 mb-16'>
+            <div className="container">
+                <Title heading={'All Products'} subheading={'build your pc'}></Title>
+
+                <Tabs>
+                    <TabList >
+                        <Tab>Processor</Tab>
+                        <Tab>Motherboard</Tab>
+                        <Tab>Ram</Tab>
+                        <Tab>SSD</Tab>
+                        <Tab>Power Supply</Tab>
+                        <Tab>Casing</Tab>
+                    </TabList>
+
+                    <TabPanel>
+                        <ProductsTab items={processor} />
+                    </TabPanel>
+                    <TabPanel>
+                        <ProductsTab items={motherboard} />
+                    </TabPanel>
+                    <TabPanel>
+                        <ProductsTab items={ram} />
+                    </TabPanel>
+                    <TabPanel>
+                        <ProductsTab items={ssd} />
+                    </TabPanel>
+                    <TabPanel>
+                        <ProductsTab items={psu} />
+                    </TabPanel>
+                    <TabPanel>
+                        <ProductsTab items={casing} />
+                    </TabPanel>
+                </Tabs>
             </div>
-    </div>
-  )
+        </div>
+    )
 }
 
 export default Products

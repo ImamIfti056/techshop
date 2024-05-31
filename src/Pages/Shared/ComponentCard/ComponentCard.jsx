@@ -1,6 +1,35 @@
-import React from 'react'
+import React, { useContext, useLayoutEffect } from 'react'
+import { AuthContext } from '../../../providers/AuthProvider'
+import Swal from 'sweetalert2'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const ComponentCard = ({ name, category, price }) => {
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    const {user} = useContext(AuthContext)
+
+    const handleAddToCart = (item) => {
+        console.log(item)
+        if(user){
+
+        }
+        else{
+            Swal.fire({
+                title: "You aren't logged in!",
+                text: "Please login to add to cart",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Go to Login"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login', {state: {from: location}})
+                }
+              });
+        }
+    }
     return (
         <div className="card w-64 bg-base-100 shadow-xl border-2">
             <figure className="px-10 pt-10">
@@ -11,7 +40,7 @@ const ComponentCard = ({ name, category, price }) => {
                 <p>Category: {category}</p>
                 <p>Price: {price}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <button className="btn btn-primary" onClick={() => handleAddToCart({name, category, price})}>Add to Cart</button>
                 </div>
             </div>
         </div>

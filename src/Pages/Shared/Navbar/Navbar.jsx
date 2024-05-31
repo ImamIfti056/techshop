@@ -1,22 +1,32 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { AuthContext } from "../../../providers/AuthProvider"
+import { FaShoppingCart } from "react-icons/fa";
 
 
 const Navbar = () => {
-    const {user, logOut} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
     const handleLogOut = () => {
         logOut()
-        .then()
-        .catch(err => console.log(err))
+            .then()
+            .catch(err => console.log(err))
     }
 
     const navOptions = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/components'>Components</Link></li>
+        <li><Link to='/orders'>Orders</Link></li>
+        <li><Link to='/cart'><button className="btn"><FaShoppingCart /><div className="badge">+1</div>
+        </button></Link></li>
         {
-            user ? <><button onClick={handleLogOut} className="btn btn-ghost">Logout</button></> : <><li><Link to='/login'>Login</Link></li></>
+            user ?
+                <>
+                    <span className="mx-6 pt-2 text-green-600">{user.displayName}</span>
+                    <button onClick={handleLogOut} className="btn btn-ghost">Logout</button>
+                </>
+                :
+                <><li><Link to='/login'>Login</Link></li></>
         }
     </>
 

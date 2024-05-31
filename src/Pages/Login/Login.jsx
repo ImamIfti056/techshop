@@ -1,11 +1,17 @@
 import { useContext, useEffect, useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2'
 
 
 const Login = () => {
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    const from = location.state?.from?.pathname || "/";
+    console.log('from ', from)
 
     const [disableLoginButton, setDisableLoginButton] = useState(true)
 
@@ -25,11 +31,24 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Login Successful",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate(from, { replace: true });
             })
+            .catch((error) => {
+                console.log(error.message)
+                Swal.fire("No account under this email! Please create an account first");
+            });
     }
 
     const handleCaptcha = e => {
-        let user_captcha_value = document.getElementById('user_captcha_input').value;
+        let user_captcha_value = e.target.value;
+        console.log(user_captcha_value)
 
         if (validateCaptcha(user_captcha_value) == true) {
             setDisableLoginButton(false)
@@ -72,11 +91,12 @@ const Login = () => {
                                 <label className="label">
                                     <LoadCanvasTemplate />
                                 </label>
-                                <input type="text" name="captcha" placeholder="type captcha" id='user_captcha_input' className="input input-bordered" required />
-                                <button onClick={handleCaptcha} className="btn btn-xs mt-3 ">Validate Captcha</button>
+                                <input onBlur={handleCaptcha} type="text" name="captcha" placeholder="type captcha" id='user_captcha_input' className="input input-bordered" required />
+                                {/* <button  className="btn btn-xs mt-3 ">Validate Captcha</button> */}
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary" type="submit" value="Login" disabled={disableLoginButton} />
+                                {/* <input className="btn btn-primary" type="submit" value="Login" disabled={disableLoginButton} /> */}
+                                <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
                         <p>New User? <Link to={'/signup'}>Create New Account</Link> </p>

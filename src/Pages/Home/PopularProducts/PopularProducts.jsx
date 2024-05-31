@@ -6,7 +6,6 @@ const PopularPorducts = () => {
     const [components] = useComponenets()
 
     const filteredComps = components.slice(0, 5)
-    console.log(filteredComps)
     return (
         <div>
             <Title heading={'Popular Products'} subheading={'Our popular products'}></Title>
