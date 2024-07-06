@@ -2,19 +2,41 @@ import React, { useContext, useLayoutEffect } from 'react'
 import { AuthContext } from '../../../providers/AuthProvider'
 import Swal from 'sweetalert2'
 import { useLocation, useNavigate } from 'react-router-dom'
+import useAxios from '../../../hooks/useAxios'
+import useCart from '../../../hooks/useCart'
 
-const ComponentCard = ({ name, category, price }) => {
+const ComponentCard = ({ name, category, price, id }) => {
     const navigate = useNavigate()
     const location = useLocation()
 
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
+    const axiosInstance = useAxios()
+    const [, refetch] = useCart()
 
     const handleAddToCart = (item) => {
-        console.log(item)
-        if(user){
+        if (user) {
+            const cartItem = {
+                itemId: id,
+                email: user.email,
+                name,
+                price
+            }
 
+            axiosInstance.post('/cart', cartItem)
+                .then(res => {
+                    if (res.data.insertedId) {
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: `${item.name} has been added to cart`,
+                            showConfirmButton: false,
+                            timer: 1000
+                        });
+                        refetch()
+                    }
+                })
         }
-        else{
+        else {
             Swal.fire({
                 title: "You aren't logged in!",
                 text: "Please login to add to cart",
@@ -23,11 +45,11 @@ const ComponentCard = ({ name, category, price }) => {
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
                 confirmButtonText: "Go to Login"
-              }).then((result) => {
+            }).then((result) => {
                 if (result.isConfirmed) {
-                    navigate('/login', {state: {from: location}})
+                    navigate('/login', { state: { from: location } })
                 }
-              });
+            });
         }
     }
     return (
@@ -40,7 +62,7 @@ const ComponentCard = ({ name, category, price }) => {
                 <p>Category: {category}</p>
                 <p>Price: {price}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary" onClick={() => handleAddToCart({name, category, price})}>Add to Cart</button>
+                    <button className="btn btn-primary" onClick={() => handleAddToCart({ name, category, price })}>Add to Cart</button>
                 </div>
             </div>
         </div>

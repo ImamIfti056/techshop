@@ -7,10 +7,11 @@ const ProductsTab = ({items}) => {
             {
                 items.map(comp => (
                     <ComponentCard
-                        key={comp.id}
+                        key={comp._id}
                         name={comp.name}
                         price={comp.price}
                         category={comp.category}
+                        id={comp._id}
                     />
                 ))
             }

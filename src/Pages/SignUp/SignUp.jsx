@@ -4,10 +4,13 @@ import { AuthContext } from "../../providers/AuthProvider"
 import { Helmet } from "react-helmet-async"
 import { Link, useNavigate } from "react-router-dom"
 import Swal from 'sweetalert2'
+import useAxiosPublic from "../../hooks/useAxiosPublic"
+import SocialLogin from "../Shared/SocialLogin/SocialLogin"
 
 const SignUp = () => {
 
   const navigate = useNavigate()
+  const axiosInstance = useAxiosPublic()
 
   const {
     register,
@@ -15,7 +18,7 @@ const SignUp = () => {
     formState: { errors },
   } = useForm()
 
-  const { createUser, updateUser, logOut } = useContext(AuthContext)
+  const { createUser, updateUser } = useContext(AuthContext)
 
   const onSubmit = (data) => {
     console.log(data)
@@ -25,7 +28,6 @@ const SignUp = () => {
         console.log('logged user', loggedUser)
         updateUser(data.name, data.photo)
           .then(() => {
-            console.log("Account created successfully")
             Swal.fire({
               position: "top-end",
               icon: "success",
@@ -35,8 +37,17 @@ const SignUp = () => {
             });
             navigate('/')
           }).catch((error) => {
-            console.log(error)
+            console.log('err', error)
           });
+          const userInfo = {
+            name: data.name,
+            email: data.email
+          }
+          axiosInstance.post('/users', userInfo)
+          .then(res => {
+            if(res.data.insertedId) console.log('user added to db')
+          })
+          .catch(err => console.log(err))
       })
   }
 
@@ -88,6 +99,7 @@ const SignUp = () => {
               </div>
             </form>
             <p><Link to={'/login'}>Already Have an account?</Link> </p>
+            <SocialLogin/>
           </div>
         </div>
       </div>

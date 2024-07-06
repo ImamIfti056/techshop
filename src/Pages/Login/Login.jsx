@@ -4,7 +4,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2'
-
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const navigate = useNavigate()
@@ -20,7 +20,7 @@ const Login = () => {
     useEffect(() => {
         loadCaptchaEnginge(6);
     }, [])
-
+    
     const handleLogin = e => {
         e.preventDefault()
         const email = e.target.email.value;
@@ -99,6 +99,7 @@ const Login = () => {
                                 <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
+                        <SocialLogin/>
                         <p>New User? <Link to={'/signup'}>Create New Account</Link> </p>
                     </div>
                 </div>
