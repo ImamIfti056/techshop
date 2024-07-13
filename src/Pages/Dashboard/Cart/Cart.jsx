@@ -6,7 +6,7 @@ import useAxios from '../../../hooks/useAxios'
 
 const Cart = () => {
     const [cart, refetch] = useCart()
-    const axiosInstance = useAxios()
+    const axiosSecure = useAxios()
 
     const totalPrice = cart.reduce( (sum, current) => sum + current.price, 0)
 
@@ -21,7 +21,7 @@ const Cart = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axiosInstance.delete(`/cart/${id}`)
+                axiosSecure.delete(`/cart/${id}`)
                     .then(res => {
                         if (res.data.deletedCount) {
                             refetch()

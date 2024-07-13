@@ -1,19 +1,20 @@
 import React from 'react'
 import { FaCcMastercard, FaList, FaShoppingCart, FaUser } from 'react-icons/fa'
 import { NavLink, Outlet } from 'react-router-dom'
+import useAdmin from '../hooks/useAdmin';
 
 const Dashboard = () => {
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
     return (
         <div className="flex">
             <div className='w-64 min-h-screen bg-orange-300'>
                 {/* ----------for admins only----------------------- */}
-                <ul className="menu">
+                {isAdmin && <ul className="menu">
                     <li className='my-3'><NavLink to='/dashboard/users'><FaUser />All Users</NavLink></li>
                     <li className='my-3'><NavLink to='/dashboard/addProducts'><FaUser />Add Products</NavLink></li>
                     <li className='my-3'><NavLink to='/dashboard/manageProducts'><FaList />Manage Products</NavLink></li>
                     <div className="divider"></div>          
-                </ul>
+                </ul>}
                 {/* -----------for users-------------------- */}
                 <ul className="menu">
                     <li className='my-3'><NavLink to='/dashboard/profile'><FaUser />Profile</NavLink></li>

@@ -10,7 +10,7 @@ import SocialLogin from "../Shared/SocialLogin/SocialLogin"
 const SignUp = () => {
 
   const navigate = useNavigate()
-  const axiosInstance = useAxiosPublic()
+  const axiosPublic = useAxiosPublic()
 
   const {
     register,
@@ -43,7 +43,7 @@ const SignUp = () => {
             name: data.name,
             email: data.email
           }
-          axiosInstance.post('/users', userInfo)
+          axiosPublic.post('/users', userInfo)
           .then(res => {
             if(res.data.insertedId) console.log('user added to db')
           })

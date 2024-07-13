@@ -10,7 +10,7 @@ const ComponentCard = ({ name, category, price, id }) => {
     const location = useLocation()
 
     const { user } = useContext(AuthContext)
-    const axiosInstance = useAxios()
+    const axiosSecure = useAxios()
     const [, refetch] = useCart()
 
     const handleAddToCart = (item) => {
@@ -22,7 +22,7 @@ const ComponentCard = ({ name, category, price, id }) => {
                 price
             }
 
-            axiosInstance.post('/cart', cartItem)
+            axiosSecure.post('/cart', cartItem)
                 .then(res => {
                     if (res.data.insertedId) {
                         Swal.fire({

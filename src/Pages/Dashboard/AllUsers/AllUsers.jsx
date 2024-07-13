@@ -16,22 +16,36 @@ const AllUsers = () => {
     })
 
     const handleMakeAdmin = user => {
-        axiosSecure.patch(`/users/admin/${user._id}`)
-            .then(res => {
-                console.log(res.data)
-                if (res.data.modifiedCount) {
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: `${user.name} is an admin now`,
-                        showConfirmButton: false,
-                        timer: 1000
-                    });
-                }
-            })
+        Swal.fire({
+            title: `Are you sure to make ${user.name} admin?`,
+            text: "",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes!"
+        }).then(result => {
+            if (result.isConfirmed) {
+                axiosSecure.patch(`/users/admin/${user._id}`)
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.modifiedCount) {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: `${user.name} is an admin now`,
+                                showConfirmButton: false,
+                                timer: 1000
+                            });
+                        }
+                    })
+            }
+        })
+
     }
 
     const handleDelete = (id) => {
+        console.log(id)
         Swal.fire({
             title: "Are you sure to delete this user?",
             text: "You won't be able to revert this!",
@@ -42,13 +56,13 @@ const AllUsers = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axiosInstance.delete(`/cart/${id}`)
+                axiosSecure.delete(`/users/${id}`)
                     .then(res => {
                         if (res.data.deletedCount) {
                             refetch()
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your file has been deleted.",
+                                text: "User deleted.",
                                 icon: "success"
                             });
                         }
@@ -79,10 +93,10 @@ const AllUsers = () => {
                                 <td>{idx + 1}</td>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                {user.role == 'admin' ? 
-                                    <td>Admin</td> : 
+                                {user.role == 'admin' ?
+                                    <td>Admin</td> :
                                     <td><button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost btn-xs"><FaUser /></button></td>
-                                    }
+                                }
                                 <th><button onClick={() => handleDelete(user._id)} className="btn btn-ghost btn-xs"><FaTrash /></button></th>
                             </tr>
                         ))
