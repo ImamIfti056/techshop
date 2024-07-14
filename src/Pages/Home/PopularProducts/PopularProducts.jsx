@@ -18,6 +18,7 @@ const PopularPorducts = () => {
                             name={comp.name}
                             price={comp.price}
                             category={comp.category}
+                            _id={comp._id}
                         />
                     ))
                 }

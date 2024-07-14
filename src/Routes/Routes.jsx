@@ -11,6 +11,9 @@ import NotFound from "../Pages/Shared/NotFound/NotFound";
 import Dashboard from "../Layout/Dashboard";
 import Cart from "../Pages/Dashboard/Cart/Cart";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AddProducts from "../Pages/Dashboard/AddProducts/AddProducts";
+import AdminRoute from "./AdminRoute";
+import ManageProducts from "../Pages/Dashboard/ManageProducts/ManageProducts";
 
 export const router = createBrowserRouter([
     {
@@ -47,10 +50,21 @@ export const router = createBrowserRouter([
                 path: '/dashboard/cart',
                 element: <Cart/>
             },
+            //----------ADMINS ONLY------------------
             {
                 path: '/dashboard/users',
-                element: <AllUsers/>
+                element: <AdminRoute><AllUsers/></AdminRoute>
             },
+            {
+                path: '/dashboard/addProducts',
+                element: <AdminRoute><AddProducts/></AdminRoute>
+            },
+            {
+                path: '/dashboard/manageProducts/:id',
+                element: <AdminRoute><ManageProducts/></AdminRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/components/${params.id}`)
+            },
+
         ]
     }
 ]);

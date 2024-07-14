@@ -11,7 +11,7 @@ const ProductsTab = ({items}) => {
                         name={comp.name}
                         price={comp.price}
                         category={comp.category}
-                        id={comp._id}
+                        _id={comp._id}
                     />
                 ))
             }

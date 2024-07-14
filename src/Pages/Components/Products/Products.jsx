@@ -15,6 +15,9 @@ const Products = () => {
     const ssd = components.filter(comp => comp.category === "ssd")
     const casing = components.filter(comp => comp.category === "case")
     const psu = components.filter(comp => comp.category === "psu")
+    const keyboard = components.filter(comp => comp.category === "keyboard")
+    const mouse= components.filter(comp => comp.category === "mouse")
+    const hdd= components.filter(comp => comp.category === "hdd")
 
     return (
         <div className='pt-24 mb-16'>
@@ -27,8 +30,11 @@ const Products = () => {
                         <Tab>Motherboard</Tab>
                         <Tab>Ram</Tab>
                         <Tab>SSD</Tab>
+                        <Tab>Hard Disk</Tab>
                         <Tab>Power Supply</Tab>
                         <Tab>Casing</Tab>
+                        <Tab>Keyboard</Tab>
+                        <Tab>Mouse</Tab>
                     </TabList>
 
                     <TabPanel>
@@ -44,10 +50,19 @@ const Products = () => {
                         <ProductsTab items={ssd} />
                     </TabPanel>
                     <TabPanel>
+                        <ProductsTab items={hdd} />
+                    </TabPanel>
+                    <TabPanel>
                         <ProductsTab items={psu} />
                     </TabPanel>
                     <TabPanel>
                         <ProductsTab items={casing} />
+                    </TabPanel>
+                    <TabPanel>
+                        <ProductsTab items={keyboard} />
+                    </TabPanel>
+                    <TabPanel>
+                        <ProductsTab items={mouse} />
                     </TabPanel>
                 </Tabs>
             </div>

@@ -12,7 +12,7 @@ const Dashboard = () => {
                 {isAdmin && <ul className="menu">
                     <li className='my-3'><NavLink to='/dashboard/users'><FaUser />All Users</NavLink></li>
                     <li className='my-3'><NavLink to='/dashboard/addProducts'><FaUser />Add Products</NavLink></li>
-                    <li className='my-3'><NavLink to='/dashboard/manageProducts'><FaList />Manage Products</NavLink></li>
+                    {/* <li className='my-3'><NavLink to='/dashboard/manageProducts'><FaList />Manage Products</NavLink></li> */}
                     <div className="divider"></div>          
                 </ul>}
                 {/* -----------for users-------------------- */}

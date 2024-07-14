@@ -1,22 +1,25 @@
 import React, { useContext, useLayoutEffect } from 'react'
 import { AuthContext } from '../../../providers/AuthProvider'
 import Swal from 'sweetalert2'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import useAxios from '../../../hooks/useAxios'
 import useCart from '../../../hooks/useCart'
+import useAdmin from '../../../hooks/useAdmin'
+import { FaEdit } from 'react-icons/fa'
 
-const ComponentCard = ({ name, category, price, id }) => {
+const ComponentCard = ({ name, category, price, _id }) => {
     const navigate = useNavigate()
     const location = useLocation()
-
+ 
     const { user } = useContext(AuthContext)
+    const [isAdmin] = useAdmin();
     const axiosSecure = useAxios()
     const [, refetch] = useCart()
 
     const handleAddToCart = (item) => {
         if (user) {
             const cartItem = {
-                itemId: id,
+                itemId: _id,
                 email: user.email,
                 name,
                 price
@@ -52,6 +55,7 @@ const ComponentCard = ({ name, category, price, id }) => {
             });
         }
     }
+
     return (
         <div className="card w-64 bg-base-100 shadow-xl border-2">
             <figure className="px-10 pt-10">
@@ -63,6 +67,9 @@ const ComponentCard = ({ name, category, price, id }) => {
                 <p>Price: {price}</p>
                 <div className="card-actions">
                     <button className="btn btn-primary" onClick={() => handleAddToCart({ name, category, price })}>Add to Cart</button>
+                    {isAdmin &&
+                        <Link to={`/dashboard/manageProducts/${_id}`} className="btn btn-secondary"><FaEdit/> </Link>
+                    }
                 </div>
             </div>
         </div>
