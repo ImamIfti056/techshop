@@ -1,13 +1,11 @@
 import { useContext } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { AuthContext } from "../../../providers/AuthProvider"
-import { FaShoppingCart } from "react-icons/fa";
-import useCart from "../../../hooks/useCart";
+import './Navbar.css'
 
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
-    const [cart] = useCart()
 
     const handleLogOut = () => {
         logOut()
@@ -16,15 +14,17 @@ const Navbar = () => {
     }
 
     const navOptions = <>
-        <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/components'>Components</NavLink></li>
-        <li><NavLink to='/dashboard/cart'><button className="btn">Dashboard<div className="badge">+{cart.length}</div>
-        </button></NavLink></li>
+        {
+            user && <li><NavLink to='/dashboard/cart'>Dashboard
+            </NavLink></li>
+        }
+
         {
             user ?
                 <>
-                    <span className="mx-6 pt-2 text-green-600">{user.displayName}</span>
-                    <button onClick={handleLogOut} className="btn btn-ghost">Logout</button>
+                    <li className="mx-6 pt-2 text-green-600">{user.displayName}</li>
+                    <li><button onClick={handleLogOut} className="btn-logout">Logout</button></li>
                 </>
                 :
                 <><li><NavLink to='/login'>Login</NavLink></li></>
@@ -32,8 +32,8 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="bg-black text-white fixed z-10 right-0 left-0">
-            <div className="container navbar">
+        <div id="navbar" className="bg-black text-white fixed z-10 right-0 left-0">
+            <div className="container navbar ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

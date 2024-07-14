@@ -3,12 +3,12 @@ import Products from '../Products/Products';
 
 const Components = () => {
   return (
-    <div>
+    <>
         <Helmet>
         <title>Techshop | Components</title>
       </Helmet>
         <Products />
-    </div>
+    </>
   )
 }
 

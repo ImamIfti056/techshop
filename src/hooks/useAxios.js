@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 export const axiosSecure = axios.create({
-  baseURL: 'https://techshop-server-nine.vercel.app',
+  baseURL: 'http://localhost:5000',
 });
 
 

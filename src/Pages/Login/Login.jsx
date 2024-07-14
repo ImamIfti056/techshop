@@ -13,13 +13,13 @@ const Login = () => {
     const from = location.state?.from?.pathname || "/";
     console.log('from ', from)
 
-    const [disableLoginButton, setDisableLoginButton] = useState(true)
+    // const [disableLoginButton, setDisableLoginButton] = useState(true)
 
     const { signIn } = useContext(AuthContext)
 
-    useEffect(() => {
-        loadCaptchaEnginge(6);
-    }, [])
+    // useEffect(() => {
+    //     loadCaptchaEnginge(6);
+    // }, [])
     
     const handleLogin = e => {
         e.preventDefault()
@@ -46,30 +46,30 @@ const Login = () => {
             });
     }
 
-    const handleCaptcha = e => {
-        let user_captcha_value = e.target.value;
-        console.log(user_captcha_value)
+    // const handleCaptcha = e => {
+    //     let user_captcha_value = e.target.value;
+    //     console.log(user_captcha_value)
 
-        if (validateCaptcha(user_captcha_value) == true) {
-            setDisableLoginButton(false)
-        }
+    //     if (validateCaptcha(user_captcha_value) == true) {
+    //         setDisableLoginButton(false)
+    //     }
 
-        else {
-            alert('Captcha Does Not Match');
-        }
-    }
+    //     else {
+    //         alert('Captcha Does Not Match');
+    //     }
+    // }
 
     return (
         <>
             <Helmet>
                 <title>Login | Techshop</title>
             </Helmet>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col">
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
+            <div className="hero min-h-screen bg-base-200 ">
+                <div className="hero-content flex-col w-full" >
+                    <div className="text-center lg:text-left mb-4">
+                        <h1 className="text-4xl font-bold">Login now!</h1>
                     </div>
-                    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card shrink-0 lg:w-1/4 w-3/5 max-w-md shadow-md bg-base-200 pb-4 px-4">
                         <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -86,20 +86,20 @@ const Login = () => {
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
-                            <div className="form-control">
+                            {/* <div className="form-control">
                                 <label className="label">
                                     <LoadCanvasTemplate />
                                 </label>
                                 <input onBlur={handleCaptcha} type="text" name="captcha" placeholder="type captcha" id='user_captcha_input' className="input input-bordered" required />
-                                {/* <button  className="btn btn-xs mt-3 ">Validate Captcha</button> */}
-                            </div>
-                            <div className="form-control mt-6">
+                                <button  className="btn btn-xs mt-3 ">Validate Captcha</button>
+                            </div> */}
+                            <div className="form-control mt-2">
                                 {/* <input className="btn btn-primary" type="submit" value="Login" disabled={disableLoginButton} /> */}
-                                <input className="btn btn-primary" type="submit" value="Login" />
+                                <input className="button" type="submit" value="Login" />
                             </div>
                         </form>
                         <SocialLogin/>
-                        <p>New User? <Link to={'/signup'}>Create New Account</Link> </p>
+                        <p className='text-center'>New User? <Link className='font-bold' to={'/signup'}>Create New Account</Link> </p>
                     </div>
                 </div>
             </div>

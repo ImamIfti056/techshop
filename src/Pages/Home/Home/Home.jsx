@@ -8,11 +8,11 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Techshop | Home</title>
+        <title>Home | Techshop</title>
       </Helmet>
       <Banner />
       <div className="container">
-        <Category />
+        {/* <Category /> */}
         <PopularPorducts />
       </div>
     </>

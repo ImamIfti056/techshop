@@ -14,6 +14,9 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AddProducts from "../Pages/Dashboard/AddProducts/AddProducts";
 import AdminRoute from "./AdminRoute";
 import ManageProducts from "../Pages/Dashboard/ManageProducts/ManageProducts";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+import Profile from "../Pages/Dashboard/Profile/Profile";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 
 export const router = createBrowserRouter([
     {
@@ -50,7 +53,19 @@ export const router = createBrowserRouter([
                 path: '/dashboard/cart',
                 element: <Cart/>
             },
+            {
+                path: '/dashboard/profile',
+                element: <Profile/>
+            },
+            // {
+            //     path: '/dashboard/payment',
+            //     element: <Payment/>
+            // },
             //----------ADMINS ONLY------------------
+            {
+                path: '/dashboard/adminHome',
+                element: <AdminRoute><AdminHome/></AdminRoute>
+            },
             {
                 path: '/dashboard/users',
                 element: <AdminRoute><AllUsers/></AdminRoute>
@@ -62,7 +77,7 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/manageProducts/:id',
                 element: <AdminRoute><ManageProducts/></AdminRoute>,
-                loader: ({params}) => fetch(`https://techshop-server-nine.vercel.app/components/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/components/${params.id}`)
             },
 
         ]

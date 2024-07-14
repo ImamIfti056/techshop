@@ -22,7 +22,7 @@ const Products = () => {
     return (
         <div className='pt-24 mb-16'>
             <div className="container">
-                <Title heading={'All Products'} subheading={'build your pc'}></Title>
+                <Title heading={'All Components'} subheading={'Build your PC'}></Title>
 
                 <Tabs>
                     <TabList >

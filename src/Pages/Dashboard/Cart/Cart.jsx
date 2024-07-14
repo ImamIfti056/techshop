@@ -3,6 +3,7 @@ import useCart from '../../../hooks/useCart'
 import { FaTrash } from 'react-icons/fa'
 import Swal from 'sweetalert2'
 import useAxios from '../../../hooks/useAxios'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
     const [cart, refetch] = useCart()
@@ -47,6 +48,7 @@ const Cart = () => {
                         <tr>
                             <th>No.</th>
                             <th>Name</th>
+                            <th>Category</th>
                             <th>Price</th>
                             <th>Qunatity</th>
                             <th>Action</th>
@@ -58,6 +60,7 @@ const Cart = () => {
                                 <tr key={item._id}>
                                     <td>{idx + 1}</td>
                                     <td>{item.name}</td>
+                                    <td>{item.category?.toUpperCase()}</td>
                                     <td>${item.price}</td>
                                     <td>1</td>
                                     <th><button onClick={() => handleDelete(item._id)} className="btn btn-ghost btn-xs"><FaTrash /></button></th>
@@ -68,6 +71,7 @@ const Cart = () => {
 
                 </table>
                 <h3>Total Price: ${totalPrice}</h3>
+                {!cart.length && <Link to='/dashboard/payment'>Pay Now</Link>}
             </div>
         </div>
     )

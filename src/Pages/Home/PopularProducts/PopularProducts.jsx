@@ -7,10 +7,9 @@ const PopularPorducts = () => {
 
     const filteredComps = components.slice(0, 5)
     return (
-        <div>
-            <Title heading={'Popular Products'} subheading={'Our popular products'}></Title>
-            <h3>Products Loaded: {components.length}</h3>
-            <div className='md:grid grid-cols-4 gap-4 justify-items-center'>
+        <div className='py-10'>
+            <Title heading={'Popular Products'} subheading={'Most Sales'}></Title>
+            <div className='md:grid 2xl:grid-cols-6 md:grid-cols-3 lg:grid-cols-4 gap-2 justify-items-center'>
                 {
                     filteredComps.map(comp => (
                         <ComponentCard
@@ -18,6 +17,8 @@ const PopularPorducts = () => {
                             name={comp.name}
                             price={comp.price}
                             category={comp.category}
+                            brand={comp.brand}
+                            imageUrl={comp.imageUrl}
                             _id={comp._id}
                         />
                     ))

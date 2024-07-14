@@ -6,8 +6,9 @@ import useAxios from '../../../hooks/useAxios'
 import useCart from '../../../hooks/useCart'
 import useAdmin from '../../../hooks/useAdmin'
 import { FaEdit } from 'react-icons/fa'
+import './ComponentCard.css'
 
-const ComponentCard = ({ name, category, price, _id }) => {
+const ComponentCard = ({ name, category, price, brand, imageUrl, _id }) => {
     const navigate = useNavigate()
     const location = useLocation()
  
@@ -22,7 +23,8 @@ const ComponentCard = ({ name, category, price, _id }) => {
                 itemId: _id,
                 email: user.email,
                 name,
-                price
+                price,
+                category
             }
 
             axiosSecure.post('/cart', cartItem)
@@ -57,18 +59,20 @@ const ComponentCard = ({ name, category, price, _id }) => {
     }
 
     return (
-        <div className="card w-64 bg-base-100 shadow-xl border-2">
-            <figure className="px-10 pt-10">
+        <div className="card lg:w-64 my-6 md:my-0 w-56 h-96 bg-base-100 shadow-xl border-2 m-auto">
+            <figure className=" px-2 pt-2">
                 <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" />
             </figure>
-            <div className="card-body items-center text-center">
+            <div className=" card-body items-center text-center">
                 <h2 className="card-title">{name}</h2>
-                <p>Category: {category}</p>
-                <p>Price: {price}</p>
+                <h2 className="brand">Brand: {brand}</h2>
+                <p className='price'>Price: ${price}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary" onClick={() => handleAddToCart({ name, category, price })}>Add to Cart</button>
+                    <button className="button" onClick={() => handleAddToCart({ name, category, price, category })}>Add to Cart</button>
                     {isAdmin &&
-                        <Link to={`/dashboard/manageProducts/${_id}`} className="btn btn-secondary"><FaEdit/> </Link>
+                        <button className='button'>
+                        <Link to={`/dashboard/manageProducts/${_id}`}><FaEdit/></Link>
+                        </button>
                     }
                 </div>
             </div>
