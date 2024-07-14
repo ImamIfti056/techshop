@@ -6,7 +6,7 @@ export const useComponenets = () => {
     // const [loading, setLoading] = useState(true)
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/components')
+    //     fetch('https://techshop-server-nine.vercel.app/components')
     //         .then(res => res.json())
     //         .then(data => {
     //             setComponents(data)

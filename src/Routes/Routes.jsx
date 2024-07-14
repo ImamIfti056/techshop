@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/manageProducts/:id',
                 element: <AdminRoute><ManageProducts/></AdminRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/components/${params.id}`)
+                loader: ({params}) => fetch(`https://techshop-server-nine.vercel.app/components/${params.id}`)
             },
 
         ]
