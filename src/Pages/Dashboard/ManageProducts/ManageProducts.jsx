@@ -5,6 +5,7 @@ import useAxiosPublic from '../../../hooks/useAxiosPublic';
 import useAxios from '../../../hooks/useAxios';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import { FaTrash } from 'react-icons/fa';
 
 const image_hosting_key = import.meta.env.VITE_imagebb_key;
 const image_hosting_url = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -92,7 +93,10 @@ const ManageProducts = () => {
     return (
         <>
             <Title heading={'Manage Product'} subheading={'Update or Delete the existing product'} />
-            <div className='bg-red-400'>
+            <div className='px-6'>
+                <div className="w-1/5 ml-auto">
+                    <button className='btn-delete' onClick={() => handleDeleteProduct(_id)}><FaTrash /> Delete Product</button>
+                </div>
                 <form className='bgmx-4 px-6' onSubmit={handleSubmit(handleUpdateProduct)}>
                     <div className="form-control w-full my-6">
                         <label className="label">
@@ -182,14 +186,10 @@ const ManageProducts = () => {
                     <div className="form-control w-full my-6">
                         <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs" />
                     </div>
-
-                    <button className="btn">Update Product</button>
-                    <Link to='/components' className='btn'> &lt; Go Back</Link>
+                    <div className="w-1/4 mt-12">
+                        <button className="button">Update Product</button>
+                    </div>
                 </form>
-            </div>
-
-            <div className="my-12 ml-6">
-                <button className='btn bg-red-800' onClick={() => handleDeleteProduct(_id)}>Delete Product</button>
             </div>
         </>
     )

@@ -1,0 +1,3 @@
+tr:nth-child(even), thead{
+    background-color: #dedede;
+}

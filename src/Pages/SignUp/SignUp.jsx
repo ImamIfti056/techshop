@@ -57,11 +57,11 @@ const SignUp = () => {
         <title>Sign Up | Techshop</title>
       </Helmet>
       <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold mb-4">Sign UP!</h1>
+        <div className="hero-content flex-col lg:flex w-full ">
+          <div className="text-center lg:text-left my-8 pt-4  ">
+            <h1 className="text-4xl font-bold">Sign UP!</h1>
           </div>
-          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card shrink-0 lg:w-1/4 w-3/5 max-w-md shadow-md bg-base-200 pb-4 px-4">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -95,11 +95,11 @@ const SignUp = () => {
                   && (<span className="text-red-400">password is required</span>)}
               </div>
               <div className="form-control mt-6">
-                <input className="btn btn-primary" type="submit" value="Sign Up" />
+                <input className="button" type="submit" value="Sign Up" />
               </div>
             </form>
-            <p><Link to={'/login'}>Already Have an account?</Link> </p>
             <SocialLogin/>
+            <p className="text-center my-4 font-bold"><Link to={'/login'}>Already Have an account?</Link> </p>
           </div>
         </div>
       </div>

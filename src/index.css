@@ -36,6 +36,22 @@
     border: 2px solid var(--darkBlue);
     color: white;
 }
+button path, svg{
+    display: inline;
+}
+
+.btn-delete{
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 14px;
+    margin: 8px auto;
+    width: fit-content;
+    background-color: red;
+    color: white;
+    border-radius: 6px;
+}
 
 img{
     max-width: 100%;

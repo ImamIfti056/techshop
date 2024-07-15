@@ -4,6 +4,7 @@ import { FaTrash } from 'react-icons/fa'
 import Swal from 'sweetalert2'
 import useAxios from '../../../hooks/useAxios'
 import { Link } from 'react-router-dom'
+import Title from '../../Shared/Title'
 
 const Cart = () => {
     const [cart, refetch] = useCart()
@@ -39,8 +40,9 @@ const Cart = () => {
         });
     }
     return (
-        <div className='p-8'>
-            <h2 className='text-xl'>Products: {cart.length}</h2>
+        <div className='px-12'>
+            <Title heading={'My Cart'} subheading={'Manage your products'} />
+            <h3 className="text-xl mb-6">Total Products: {cart.length}</h3>
             <div className="overflow-x-auto mt-4">
                 <table className="table">
                     {/* head */}
@@ -70,8 +72,7 @@ const Cart = () => {
                     </tbody>
 
                 </table>
-                <h3>Total Price: ${totalPrice}</h3>
-                {!cart.length && <Link to='/dashboard/payment'>Pay Now</Link>}
+                <h3 className='text-2xl mt-12'>Total Price: ${totalPrice}</h3>
             </div>
         </div>
     )

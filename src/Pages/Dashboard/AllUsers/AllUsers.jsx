@@ -3,6 +3,8 @@ import { useQuery } from '@tanstack/react-query'
 import useAxios from '../../../hooks/useAxios'
 import { FaTrash, FaUser } from 'react-icons/fa'
 import Swal from 'sweetalert2'
+import Title from '../../Shared/Title'
+import './AllUsers.css'
 
 const AllUsers = () => {
     const axiosSecure = useAxios()
@@ -74,8 +76,9 @@ const AllUsers = () => {
     }
 
     return (
-        <div>
-            AllUsers: {users.length}
+        <div className='px-12'>
+            <Title heading={'All Users'} subheading={'Manage all users from your website'} />
+            <h3 className="text-xl mb-6">Total Users: {users.length}</h3>
             <table className="table">
                 <thead>
                     <tr>

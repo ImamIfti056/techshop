@@ -37,7 +37,7 @@ const AddProducts = () => {
             console.log(product)
             const productRes = await axiosSecure.post('/components', product)
             console.log(productRes.data)
-            if(productRes.data.insertedId){
+            if (productRes.data.insertedId) {
                 reset()
                 Swal.fire({
                     position: "top-end",
@@ -45,18 +45,18 @@ const AddProducts = () => {
                     title: `${product.name} added Successfully`,
                     showConfirmButton: false,
                     timer: 1000
-                  });
+                });
             }
-            
+
         }
 
 
     }
     return (
         <>
-            <Title heading={'Add New Product'} subheading={'Fill up the form'} />
-            <div>
-                <form className='bgmx-4 px-6' onSubmit={handleSubmit(handleFormSubmit)}>
+            <Title heading={'Add New Product'} subheading={'Fill up the form to add a new component'} />
+            <div className='px-6'>
+                <form className='mx-4 px-6' onSubmit={handleSubmit(handleFormSubmit)}>
                     <div className="form-control w-full my-6">
                         <label className="label">
                             <span className="label-text">Name*</span>
@@ -142,8 +142,9 @@ const AddProducts = () => {
                     <div className="form-control w-full my-6">
                         <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs" />
                     </div>
-
-                    <button className="btn">Add Product</button>
+                    <div className="w-1/4 mt-12 ">
+                        <button className="button">Add Product</button>
+                    </div>
                 </form>
             </div>
         </>
