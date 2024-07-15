@@ -11,7 +11,7 @@ import './ComponentCard.css'
 const ComponentCard = ({ name, category, price, brand, imageUrl, _id }) => {
     const navigate = useNavigate()
     const location = useLocation()
- 
+
     const { user } = useContext(AuthContext)
     const [isAdmin] = useAdmin();
     const axiosSecure = useAxios()
@@ -60,19 +60,19 @@ const ComponentCard = ({ name, category, price, brand, imageUrl, _id }) => {
 
     return (
         <div className="card lg:w-64 my-6 md:my-0 w-56 h-96 bg-base-100 shadow-xl border-2 m-auto">
-            <figure className=" px-2 pt-2">
-                <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" />
+            <figure className="px-2 pt-2">
+                <img src={imageUrl} alt="product-img" className="rounded-xl" />
             </figure>
-            <div className=" card-body items-center text-center">
+            <div className=" card-body items-center text-center ">
                 <h2 className="card-title">{name}</h2>
                 <h2 className="brand">Brand: {brand}</h2>
                 <p className='price'>Price: ${price}</p>
                 <div className="card-actions">
                     <button className="button" onClick={() => handleAddToCart({ name, category, price, category })}>Add to Cart</button>
                     {isAdmin &&
-                        <button className='button'>
-                        <Link to={`/dashboard/manageProducts/${_id}`}><FaEdit/></Link>
-                        </button>
+
+                        <Link to={`/dashboard/manageProducts/${_id}`}><button className='button'><FaEdit /></button></Link>
+
                     }
                 </div>
             </div>

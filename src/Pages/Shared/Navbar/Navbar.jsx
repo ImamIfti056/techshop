@@ -23,7 +23,7 @@ const Navbar = () => {
         {
             user ?
                 <>
-                    <li className="mx-6 pt-2 text-green-600">{user.displayName}</li>
+                    <li className="mx-6 text-green-600"><Link to='/dashboard/profile'>{user.displayName}</Link></li>
                     <li><button onClick={handleLogOut} className="btn-logout">Logout</button></li>
                 </>
                 :

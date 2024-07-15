@@ -40,9 +40,9 @@ const ManageProducts = () => {
                 imageUrl: res.data.data.display_url, //the hosting url
                 description: data.description
             }
-            console.log(product)
+            // console.log(product)
             const productRes = await axiosSecure.patch(`/components/${_id}`, product)
-            console.log(productRes.data)
+            // console.log(productRes.data)
             if (productRes.data.modifiedCount) {
                 // reset()
                 Swal.fire({

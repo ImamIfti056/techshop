@@ -7,6 +7,10 @@
     --darkBlue: rgb(47, 47, 92);
 }
 
+*{
+    box-sizing: border-box;
+}
+
 .container{
     max-width: 1980px;
     width: 90%;
